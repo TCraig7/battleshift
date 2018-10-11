@@ -5,13 +5,16 @@ class DataCompiler
   end
 
   def conn
-    Faraday.new(url: ENV["path"]) do |faraday|
-      faraday.adapter Faraday.default_adapter
-    end
+    Faraday.new(url: ENV["path"])
   end
 
   def getter
     conn.get(@path)
+  end
+
+  def patcher(params)
+    email = params[:email]
+    conn.patch(@path, { 'email': email })
   end
 
   def parser

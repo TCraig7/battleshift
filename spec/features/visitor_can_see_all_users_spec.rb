@@ -16,9 +16,10 @@ feature 'visitor can see all users' do
 
       within(".user-1") do
         click_on "Edit"
-      end 
+      end
 
-      expect(path).to eq("/users/1/edit")
+      expect(current_path).to eq("/users/1/edit")
+      expect(page).to have_content("Edit User Email")
     end
   end
 end
