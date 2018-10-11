@@ -13,4 +13,12 @@ class UsersController < ApplicationController
     response = compiler.parser
     @user = AppUser.new(response)
   end
+
+  def edit
+
+  end
+
+  def update
+
+  end
 end
