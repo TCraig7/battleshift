@@ -14,7 +14,9 @@ feature 'visitor can see all users' do
     VCR.use_cassette("users_edit_index") do
       visit '/users'
 
-      click_on "Edit"
+      within(".user-1") do
+        click_on "Edit"
+      end 
 
       expect(path).to eq("/users/1/edit")
     end

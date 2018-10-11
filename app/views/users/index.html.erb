@@ -1,4 +1,9 @@
-<% @users.each do |user| %>
-  <%= user.name %>
-  <%= user.email %>
-<% end %>
+<div>
+  <% @users.each do |user| %>
+    <ul class="user-<%= user.id %>">
+      <li><%= user.name %></li>
+      <li><%= user.email %></li>
+      <li><%= link_to "Edit", edit_user_path(user.id) %></li>
+    </ul>
+  <% end %>
+</div>
