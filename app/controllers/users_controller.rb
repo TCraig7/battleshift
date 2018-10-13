@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     @users = response.map do |user|
       AppUser.new(user)
     end
-
   end
 
   def show
@@ -27,4 +26,21 @@ class UsersController < ApplicationController
     # flash[:notice] = "Successfully update #{parsed[:name]}"
     redirect_to users_path
   end
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    user = User.create(user_params)
+    if user.save
+      flash[:notice] = "This account has not yet been activated. Please check your email."
+      redirect_to dashboard_path
+    end
+  end
+
+  private
+    def user_params
+      params.permit(:name, :email, :address, :phone, :password)
+    end
 end
