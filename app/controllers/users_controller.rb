@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     @users = response.map do |user|
       AppUser.new(user)
     end
-
   end
 
   def show
@@ -27,4 +26,12 @@ class UsersController < ApplicationController
     # flash[:notice] = "Successfully update #{parsed[:name]}"
     redirect_to users_path
   end
+
+  def new
+    @user = User.new
+  end
+
+  # def create
+    
+  # end
 end
