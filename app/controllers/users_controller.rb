@@ -31,7 +31,16 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # def create
-    
-  # end
+  def create
+    user = User.create(user_params)
+    if user.save
+      flash[:notice] = "This account has not yet been activated. Please check your email."
+      redirect_to dashboard_path
+    end
+  end
+
+  private
+    def user_params
+      params.permit(:name, :email, :address, :phone, :password)
+    end
 end

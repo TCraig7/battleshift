@@ -24,6 +24,7 @@ group :development, :test do
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
+  gem 'bcrypt', '~> 3.1.7'
 end
 
 group :test do

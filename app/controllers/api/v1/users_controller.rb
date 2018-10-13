@@ -11,10 +11,15 @@ module Api
 
       def update
         user = User.find(params[:id])
-        user.update(email: params[:email])
+        user.update(user_params)
 
         render json: user
       end
+
+      private
+        def user_params
+          params.permit(:email)
+        end
     end
   end
 end
