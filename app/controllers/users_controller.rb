@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @users = response.map do |user|
       AppUser.new(user)
     end
+
   end
 
   def show
@@ -15,10 +16,15 @@ class UsersController < ApplicationController
   end
 
   def edit
-
+    @id = params[:id]
   end
 
   def update
+    id = params[:id]
+    compiler = DataCompiler.new("api/v1/users/#{id}")
+    response = compiler.patcher(params)
 
+    # flash[:notice] = "Successfully update #{parsed[:name]}"
+    redirect_to users_path
   end
 end

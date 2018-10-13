@@ -1,0 +1,7 @@
+<h1>Edit User Email</h1>
+
+<%= form_tag("/users/#{@id}", method: "patch") do %>
+  <%= label_tag("Email") %>
+  <%= text_field_tag(:email) %>
+  <%= submit_tag("Update") %>
+<% end %>

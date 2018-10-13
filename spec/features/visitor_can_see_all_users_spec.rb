@@ -9,4 +9,17 @@ feature 'visitor can see all users' do
       expect(page).to have_content("Jon Tester")
     end
   end
+
+  scenario 'can edit a user email' do
+    VCR.use_cassette("users_edit_index") do
+      visit '/users'
+
+      within(".user-1") do
+        click_on "Edit"
+      end
+
+      expect(current_path).to eq("/users/1/edit")
+      expect(page).to have_content("Edit User Email")
+    end
+  end
 end
