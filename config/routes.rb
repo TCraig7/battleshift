@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :index, :edit, :update, :new, :create]
+
+  resources :account_activations, only: [:edit]
   root "welcome#index"
-  get "/register", to: "users#new" 
+  get "/register", to: "users#new"
   get "/dashboard", to: "dashboard#show"
 end
