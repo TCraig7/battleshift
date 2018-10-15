@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :account_activations, only: [:edit]
   resources :users, only: [:show, :index, :edit, :update, :new, :create]
   root "welcome#index"
   get "/register", to: "users#new" 

@@ -34,8 +34,12 @@ class UsersController < ApplicationController
   def create
     user = User.create(user_params)
     if user.save
+      ActivationMailer.account_activation(user).deliver_now
       flash[:notice] = "This account has not yet been activated. Please check your email."
+      session[:id] = user.id
       redirect_to dashboard_path
+    else
+      render :new
     end
   end
 
