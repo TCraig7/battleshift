@@ -39,7 +39,7 @@ class UsersController < ApplicationController
       session[:id] = user.id
       redirect_to dashboard_path
     else
-      render :new
+      redirect_to('/register', notice: 'Invalid registration details.')
     end
   end
 
