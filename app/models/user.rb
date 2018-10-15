@@ -1,4 +1,4 @@
-# require 'bcrypt'
+require 'securerandom'
 
 class User < ApplicationRecord
   before_create :create_activation_digest, :create_api_key
