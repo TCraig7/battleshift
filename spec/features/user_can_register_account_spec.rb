@@ -7,7 +7,7 @@ feature 'Guest creates an account' do
 
     expect(current_path).to eq('/register')
 
-    name = 'Battleship Afficianado'
+    name = 'Battleshift Aficionado'
 
     fill_in :email, with: 'test@example.com'
     fill_in :name, with: name
