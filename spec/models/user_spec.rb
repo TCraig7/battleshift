@@ -17,7 +17,7 @@ describe User, type: :model do
 
         expect(user.api_key).to_not be_nil
         expect(user.api_key).to be_a(String)
-        expect(user.api_key.length).to eq(36)
+        expect(user.api_key.length).to eq(22)
       end
     end
   end
