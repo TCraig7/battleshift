@@ -4,6 +4,7 @@ require 'securerandom'
 class User < ApplicationRecord
   before_create :create_activation_digest, :create_api_key
 
+  validates_presence_of :name, :email, :password
   validates_confirmation_of :password, on: :create
   has_secure_password
   
