@@ -11,7 +11,8 @@ module Api
 
       def update
         user = User.find(params[:id])
-        user.update(user_params)
+        # binding.pry
+        user.update_attributes(user_params)
 
         render json: user
       end

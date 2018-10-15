@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:3000/api/v1/users/1
     body:
       encoding: UTF-8
-      string: email=jbbartlet22%40gmail.com
+      string: params%5Bemail%5D=jbbartlet22%40gmail.com
     headers:
       User-Agent:
       - Faraday v0.15.3
@@ -23,20 +23,20 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"ffbb5a45f3970d6eafac6584a43c5bb6"
+      - W/"72fd52bc14a07828b13d62bd150e4ee8"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9ee081c6-b4bd-4ae5-9d29-66b62c83a747
+      - 2609dd33-b3f2-4968-a821-baf01b76f2c3
       X-Runtime:
-      - '0.388077'
+      - '0.039140'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"id":1,"name":"Josiah Bartlet","email":"jbbartlet22@gmail.com"}'
+      string: '{"id":1,"name":"Josiah Bartlet","email":"jbartlet@example.com"}'
     http_version: 
-  recorded_at: Mon, 15 Oct 2018 13:38:49 GMT
+  recorded_at: Mon, 15 Oct 2018 14:12:49 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users
@@ -62,9 +62,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - fdbc0d27-0abd-4a1a-8bf9-aaac0b0b2f2c
+      - f943d761-242e-4800-9b8b-6ea542489a88
       X-Runtime:
-      - '0.013889'
+      - '0.003190'
       Transfer-Encoding:
       - chunked
     body:
@@ -72,5 +72,5 @@ http_interactions:
       string: '[{"id":1,"name":"Josiah Bartlet","email":"jbartlet@example.com"},{"id":2,"name":"Jon
         Tester","email":"jtester@example.com"}]'
     http_version: 
-  recorded_at: Mon, 15 Oct 2018 13:38:49 GMT
+  recorded_at: Mon, 15 Oct 2018 14:12:49 GMT
 recorded_with: VCR 4.0.0
