@@ -11,17 +11,17 @@ class User < ApplicationRecord
   enum status: ['inactive', 'active']
   
   def activate_account
-   self.update!(status: 'active', activation_token: nil)
+   self.update!(status: 'active')
   end
     
   private
     
     def create_activation_digest
-    self.activation_digest = SecureRandom.urlsafe_base64
+      self.activation_digest = SecureRandom.urlsafe_base64
     end
     
     def create_api_key
-    self.api_key = SecureRandom.urlsafe_base64
+      self.api_key = SecureRandom.urlsafe_base64
     end
 
 end
