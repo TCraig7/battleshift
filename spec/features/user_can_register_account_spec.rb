@@ -9,7 +9,7 @@ feature 'Guest creates an account' do
 
     name = 'Battleshift Aficionado'
 
-    fill_in :email, with: 'test@example.com'
+    fill_in :email, with: 'ba@example.com'
     fill_in :name, with: name
     fill_in :password, with: 'password'
     fill_in :password_confirmation, with: 'password'
