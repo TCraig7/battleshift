@@ -27,16 +27,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7dbea3b3-e509-48e1-8b3d-b5ba5537b399
+      - 07feba07-8d10-4ff9-a6ea-23a0d208f18d
       X-Runtime:
-      - '0.042691'
+      - '0.361392'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"id":1,"name":"Josiah Bartlet","email":"jbbartlet22@gmail.com"}'
     http_version: 
-  recorded_at: Mon, 15 Oct 2018 13:16:44 GMT
+  recorded_at: Mon, 15 Oct 2018 13:28:57 GMT
 - request:
     method: get
     uri: http://localhost:3000/api/v1/users
@@ -62,9 +62,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0be6df92-7c88-4ffb-b758-a81c5b1c17c4
+      - '081edf15-4fd3-42eb-a81a-342caba45d75'
       X-Runtime:
-      - '0.002894'
+      - '0.014668'
       Transfer-Encoding:
       - chunked
     body:
@@ -72,5 +72,5 @@ http_interactions:
       string: '[{"id":1,"name":"Josiah Bartlet","email":"jbartlet@example.com"},{"id":2,"name":"Jon
         Tester","email":"jtester@example.com"}]'
     http_version: 
-  recorded_at: Mon, 15 Oct 2018 13:16:44 GMT
+  recorded_at: Mon, 15 Oct 2018 13:28:57 GMT
 recorded_with: VCR 4.0.0
