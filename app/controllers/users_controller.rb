@@ -23,7 +23,6 @@ class UsersController < ApplicationController
     compiler = DataCompiler.new("api/v1/users/#{id}")
     response = compiler.patcher(params)
 
-    # flash[:notice] = "Successfully update #{parsed[:name]}"
     redirect_to users_path
   end
 
@@ -36,7 +35,6 @@ class UsersController < ApplicationController
     if user.save
       ActivationMailer.account_activation(user).deliver_now
       flash[:notice] = "This account has not yet been activated. Please check your email."
-      session[:id] = user.id
       redirect_to dashboard_path
     else
       redirect_to('/register', notice: 'Invalid registration details.')
