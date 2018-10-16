@@ -1,7 +1,7 @@
 class Board
   attr_reader :length,
-              :board, 
-              :count
+              :board
+  attr_accessor :count
 
   def initialize(length)
     @length = length
