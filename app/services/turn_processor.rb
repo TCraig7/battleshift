@@ -26,7 +26,6 @@ class TurnProcessor
     elsif @api_key != @game.player_1_api_key
       return true if @game.current_turn == "player_2"
     else
-      @messages << "Invalid move. It's your opponent's turn"
       return false
     end
   end

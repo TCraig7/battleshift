@@ -10,7 +10,7 @@ module Api
             turn_processor.run!
             render json: game, message: turn_processor.message
           else
-            render json: game, :status => 400, message: turn_processor.message
+            render json: game, :status => 400, message: "Invalid move. It's your opponent's turn"
           end
         end
       end
