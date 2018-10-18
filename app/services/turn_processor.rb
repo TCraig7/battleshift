@@ -8,7 +8,6 @@ class TurnProcessor
 
   def run!
     begin
-      # check_current_player
       attack_opponent
       game.save!
     rescue InvalidAttack => e
