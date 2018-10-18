@@ -4,6 +4,7 @@ class TurnProcessor
     @target = target
     @messages = []
     @api_key = api_key
+    @hit = 0
   end
 
   def run!
@@ -37,7 +38,20 @@ class TurnProcessor
     @api_key == @game.player_1_api_key
     result = Shooter.fire!(board: board_selectorator, target: target)
     @messages << "Your shot resulted in a #{result}."
+    if result == "Hit"
+      @hit = 1
+      did_it_sink
+    end
     player_selectorator
+  end
+
+  def did_it_sink
+    if @hit == 1
+      bs = board_selectorator.locate_space(@target)
+      if bs.contents.is_sunk?
+        @messages << "Battleship sunk."
+      end
+    end
   end
 
   def board_selectorator

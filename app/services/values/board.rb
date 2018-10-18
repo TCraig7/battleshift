@@ -1,12 +1,14 @@
 class Board
   attr_reader :length,
-              :board
+              :board,
+              :ships
   attr_accessor :count
 
   def initialize(length)
     @length = length
     @board = create_grid
     @count = 0
+    @ships = []
   end
 
   def get_row_letters

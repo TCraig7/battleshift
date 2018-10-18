@@ -16,6 +16,10 @@ class ShipPlacer
     end
   end
 
+  def add_ships
+    @board.ships << @ship
+  end
+
   private
   attr_reader :board, :ship,
     :start_space, :end_space
@@ -51,6 +55,7 @@ class ShipPlacer
     else
       @board.count += 1
       space.occupy!(ship)
+      add_ships
     end
   end
 end
