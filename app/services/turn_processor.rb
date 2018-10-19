@@ -40,9 +40,21 @@ class TurnProcessor
     @messages << "Your shot resulted in a #{result}."
     if result == "Hit"
       @hit = 1
+      board_selectorator.total_hits += 1
       did_it_sink
     end
+    win?
+
     player_selectorator
+  end
+
+  def win?
+    if board_selectorator.total_hits == 5
+      @messages << "Game over."
+      email = User.find_by_api_key(@api_key).email
+      @game.update(winner: email)
+      @game.save
+    end
   end
 
   def did_it_sink
