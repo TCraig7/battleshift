@@ -11,7 +11,7 @@ describe "Api::V1::Shots" do
         player_2_board: player_2_board
       )
     }
-
+    
     it "updates the message and board with a hit" do
       allow_any_instance_of(AiSpaceSelector).to receive(:fire!).and_return("Miss")
       ShipPlacer.new(board: player_2_board,
